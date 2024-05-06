@@ -51,9 +51,9 @@
             // button1
             // 
             button1.BackColor = SystemColors.MenuBar;
-            button1.Location = new Point(300, 369);
+            button1.Location = new Point(281, 369);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(125, 29);
             button1.TabIndex = 1;
             button1.Text = "Добавить";
             button1.UseVisualStyleBackColor = false;
@@ -73,11 +73,11 @@
             // button3
             // 
             button3.BackColor = SystemColors.MenuBar;
-            button3.Location = new Point(281, 401);
+            button3.Location = new Point(281, 402);
             button3.Name = "button3";
             button3.Size = new Size(125, 29);
             button3.TabIndex = 3;
-            button3.Text = "Сортировка";
+            button3.Text = "Sort.Name";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -134,7 +134,7 @@
             button5.Name = "button5";
             button5.Size = new Size(125, 29);
             button5.TabIndex = 7;
-            button5.Text = "Сортировка";
+            button5.Text = "Sort.Disc";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 

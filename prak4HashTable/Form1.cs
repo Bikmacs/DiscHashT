@@ -22,13 +22,18 @@ namespace prak4HashTable
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (textBox1.Text != "")
+            string text = textBox1.Text;
+            if (!string.IsNullOrEmpty(text))
             {
-                hash.Add(hash.Count + 1, textBox1.Text);
+                hash.Add(hash.Count + 1, text);
                 listBox1.Items.Add(hash[hash.Count]);
                 textBox1.Clear();
             }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите текст");
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,6 +48,11 @@ namespace prak4HashTable
         private void button3_Click(object sender, EventArgs e)
         {
             string name = textBox2.Text;
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Пожалуйста, введите имя");
+                return;
+            }
 
             List<string> values = new List<string>();
             foreach (string value in hash.Values)
@@ -84,24 +94,30 @@ namespace prak4HashTable
         private void button5_Click(object sender, EventArgs e)
         {
             string name = textBox3.Text;
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Пожалуйста, введите букву для поиска");
+                return;
+            }
 
             List<string> values = new List<string>();
             foreach (string value in hash.Values)
             {
-                if (value.StartsWith(name, StringComparison.CurrentCultureIgnoreCase))
+                if (value.Contains(name, StringComparison.CurrentCultureIgnoreCase))
                 {
                     values.Add(value);
                 }
             }
 
-            // Очищаем ListBox
-            listBox1.Items.Clear();
+            values.Sort();
 
+            listBox1.Items.Clear();
 
             foreach (string value in values)
             {
                 listBox1.Items.Add(value);
             }
+
         }
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
